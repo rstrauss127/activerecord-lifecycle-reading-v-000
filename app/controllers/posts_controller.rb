@@ -27,4 +27,7 @@ class PostsController < ApplicationController
 	  @post = Post.find(params[:id])
 	end
 
+	def post_params(*args)
+		params.require(:post).permit(*args)
+	end
 end
